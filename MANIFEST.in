@@ -12,6 +12,7 @@ recursive-include cli *.py
 recursive-include utils *.py
 recursive-include tools *.py
 recursive-include workflows *.py
+recursive-include orion *.py *.md *.yaml
 global-exclude *.pyc
 global-exclude .git*
 global-exclude .history*
