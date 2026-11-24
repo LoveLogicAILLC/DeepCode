@@ -1,0 +1,37 @@
+# ORION Platform Configuration
+# ============================
+# Override any value via environment variables (ORION_LOG_LEVEL, ORION_API_PORT, etc.)
+
+log_level: INFO
+
+# Provider chain — ordered by priority (0 = highest)
+providers:
+  - name: ollama-hermes
+    base_url: http://localhost:11434
+    model: hermes3:70b
+    priority: 0
+    timeout: 120
+    enabled: true
+
+  - name: ollama-qwen
+    base_url: http://localhost:11434
+    model: qwen2.5:32b
+    priority: 1
+    timeout: 120
+    enabled: true
+
+# Event bus backend: memory (default) | redis | mqtt
+event_bus_backend: memory
+
+# API gateway
+api_host: 0.0.0.0
+api_port: 8420
+
+# MCP transport: stdio | http
+mcp_transport: stdio
+
+# Modules to auto-load on platform boot
+auto_load_modules:
+  - griefdao
+  - echomerce
+  - soulprint
