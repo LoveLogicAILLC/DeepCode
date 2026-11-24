@@ -86,6 +86,7 @@ setuptools.setup(
     entry_points={
         "console_scripts": [
             "deepcode=deepcode:main",
+            "orion=orion.cli:main",
         ],
     },
     project_urls={
